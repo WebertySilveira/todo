@@ -1,0 +1,25 @@
+{
+    "name": "root/html",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+      "ext-pdo": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.41",
+        "phpstan/phpstan": "^1.10"
+    },
+    "scripts": {
+        "check": [
+            "@phpstan",
+            "@cs:check"
+        ],
+
+        "phpstan": "phpstan analyze ./app",
+        "cs:check": "php-cs-fixer fix ./app"
+    }
+}
