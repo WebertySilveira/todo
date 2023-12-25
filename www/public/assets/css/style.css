@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+
+    background-image: url("https://images.unsplash.com/photo-1703002918388-ee88c34cec50?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    padding: 10px;
+    margin: 10px;
+}
+
+.form-group {
+    margin: 20px;
+}
+
+.swim-lane {
+    margin: 10px;
+    background-color: #dfdee6;
+    border-radius: 5px;
+}
+
+.task {
+    background-color: white;
+    border-radius: 5px;
+    margin: 15px 0px 15px 0px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    cursor: move;
+}
+
+.is-dragging {
+    scale: 1.01;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 1);
+    background: rgb(50, 50, 50);
+    color: white;
+}
