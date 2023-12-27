@@ -1,2 +1,4 @@
-www/vendor
+/www/vendor
+www/.php-cs-fixer.cache
 logs
+.idea/*

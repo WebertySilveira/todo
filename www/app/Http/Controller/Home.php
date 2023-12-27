@@ -2,8 +2,8 @@
 
 namespace App\Http\Controller;
 
-class Home {
-
+class Home
+{
     public function __construct()
     {
         $this->index();

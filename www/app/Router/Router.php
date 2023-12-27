@@ -15,12 +15,12 @@ class Router
 
     public function route()
     {
-        switch ((new Helpers)->url()) {
-            case '/':
-                (new Home());
-                break;
+        switch ((new Helpers())->url()) {
             case '/kanban/insert':
                 (new Kanban())->insert();
+                break;
+            default:
+                (new Home());
                 break;
         }
     }

@@ -2,8 +2,8 @@
 
 namespace App;
 
-class Helpers {
-
+class Helpers
+{
     public function dd(string $value): string
     {
         echo "<pre>";

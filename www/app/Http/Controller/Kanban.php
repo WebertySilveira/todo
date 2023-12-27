@@ -2,14 +2,18 @@
 
 namespace App\Http\Controller;
 
+use App\Entity\Card;
+
 class Kanban
 {
-    public function insert(): bool
+    public function insert()
     {
-        $isPost = $_SERVER['REQUEST_METHOD'];
+        $card = new Card();
+        $card->title = $_POST['title'];
+        $card->description = $_POST['description'];
 
-        if ($isPost) {
-            echo "teste";
+        if (!(new \App\Model\Kanban())->save($card)) {
+            http_response_code(400);
         }
     }
 }
