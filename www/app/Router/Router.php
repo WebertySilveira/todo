@@ -15,7 +15,7 @@ class Router
 
     public function route()
     {
-        switch ((new Helpers)->url()) {
+        switch ((new Helpers())->url()) {
             case '/':
                 (new Home());
                 break;

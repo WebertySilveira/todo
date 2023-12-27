@@ -1,16 +1,15 @@
 let insertTodo = (() => {
     let handleForm = () => {
         $('#insert-todo-form').submit(function (event) {
-            event.preventDefault();
-            let insertForm = $(this).serialize();
+            let insertTodoForm = $(this).serialize();
 
+            event.preventDefault();
             $.ajax({
                 url: '/kanban/insert',
                 type: 'POST',
-                data: insertForm,
+                data: insertTodoForm,
                 success: function (data) {
                     alert("OK")
-                    window.location.href = "";
                 },
                 error: function (data){
                     alert("Dados incorretos!")
