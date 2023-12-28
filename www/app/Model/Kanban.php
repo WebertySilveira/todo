@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Entity\Connect;
+use App\Entity\Enum\Column;
 
 class Kanban
 {
@@ -22,5 +23,18 @@ class Kanban
         }
 
         return true;
+    }
+
+    public function list(Column $lane)
+    {
+        $lane = $lane->getColumn();
+
+        $pdo = Connect::getInstance()->prepare(
+            "SELECT * FROM card WHERE lane = (:lane) group by lane"
+        );
+        $pdo->bindParam(":lane", $lane);
+        $pdo->execute();
+
+        return $pdo->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
