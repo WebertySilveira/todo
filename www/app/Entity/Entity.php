@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
-use App\Entity\Enum\Column;
+use App\Entity\Enum\Lane;
 
 class Entity extends \stdClass
 {
-    public Column $lane = Column::TODO;
+    public Lane $lane = Lane::TODO;
 }

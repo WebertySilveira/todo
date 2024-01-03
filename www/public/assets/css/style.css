@@ -43,3 +43,7 @@ body {
     background: rgb(50, 50, 50);
     color: white;
 }
+
+#card-remove {
+    cursor: pointer;
+}

@@ -1,40 +1,59 @@
+<div class="row lanes">
+    <?php use App\Entity\Enum\Lane;
 
-    <div class="row lanes">
-        <div class="col swim-lane">
-            <h3 class="heading">TODO</h3>
+    $kanban = (new \App\Model\Kanban())->list(Lane::TODO); ?>
 
-            <?php $kanban = (new \App\Model\Kanban())->list(\App\Entity\Enum\Column::TODO); ?>
+    <div class="col dropzone swim-lane" data-lane="<?= (Lane::TODO->value); ?>">
+        <h3 class="heading">TODO</h3>
 
-            <?php foreach ($kanban as $item): ?>
-            <div class="card task" draggable="true">
+        <?php foreach ($kanban as $item): ?>
+            <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
                 <div class="card-body">
                     <h5 class="card-title"><?= $item['title']; ?></h5>
                     <p class="card-text"><?= $item['description']; ?></p>
                 </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
-
-        <div class="col swim-lane">
-            <h3 class="heading">DOING</h3>
-
-            <div class="card task" draggable="true">
-                <div class="card-body">
-                    <h5 class="card-title">Título3</h5>
-                    <p class="card-text">Tarefa que precisa ser realizada</p>
+                <div>
+                    <span class="material-icons" data-id="<?= $item['id']; ?>" id="card-remove">delete_outline</span>
                 </div>
             </div>
-        </div>
+        <?php endforeach; ?>
+    </div>
 
-        <div class="col swim-lane">
-            <h3 class="heading">DONE</h3>
+    <?php $kanban = (new \App\Model\Kanban())->list(Lane::DOING); ?>
 
-            <div class="card task" draggable="true">
+    <div class="col dropzone swim-lane" data-lane="<?= (Lane::DOING->value); ?>">
+
+        <h3 class="heading">DOING</h3>
+
+        <?php foreach ($kanban as $item): ?>
+            <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
                 <div class="card-body">
-                    <h5 class="card-title">Título4</h5>
-                    <p class="card-text">Tarefa que precisa ser realizada</p>
+                    <h5 class="card-title"><?= $item['title']; ?></h5>
+                    <p class="card-text"><?= $item['description']; ?></p>
+                </div>
+                <div>
+                    <span class="material-icons" data-id="<?= $item['id']; ?>" id="card-remove">delete_outline</span>
                 </div>
             </div>
-        </div>
+        <?php endforeach; ?>
+    </div>
+
+    <?php $kanban = (new \App\Model\Kanban())->list(Lane::DONE); ?>
+
+    <div class="col dropzone swim-lane" data-lane="<?= (Lane::DONE->value); ?>">
+
+        <h3 class="heading">DONE</h3>
+
+        <?php foreach ($kanban as $item): ?>
+            <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $item['title']; ?></h5>
+                    <p class="card-text"><?= $item['description']; ?></p>
+                </div>
+                <div>
+                    <span class="material-icons" data-id="<?= $item['id']; ?>" id="card-remove">delete_outline</span>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>

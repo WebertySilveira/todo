@@ -19,6 +19,12 @@ class Router
             case '/kanban/insert':
                 (new Kanban())->insert();
                 break;
+            case '/kanban/delete':
+                (new Kanban())->delete();
+                break;
+            case '/kanban/update':
+                (new Kanban())->update();
+                break;
             default:
                 (new Home());
                 break;
