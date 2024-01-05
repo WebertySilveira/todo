@@ -44,6 +44,10 @@ body {
     color: white;
 }
 
-#card-remove {
+.card-remove, .card-update {
     cursor: pointer;
+}
+
+.card-title, .card-text {
+    border: 0;
 }

@@ -25,6 +25,9 @@ class Router
             case '/kanban/update':
                 (new Kanban())->update();
                 break;
+            case '/kanban/updateText':
+                (new Kanban())->updateText();
+                break;
             default:
                 (new Home());
                 break;

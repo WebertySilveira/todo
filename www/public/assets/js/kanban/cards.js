@@ -17,14 +17,15 @@ let cards = (() => {
             });
         })
     }
+
     let handleCardRemove = () => {
-        $("span#card-remove").click(function (e) {
-            let objectiveId = $(this).data('id');
+        $("span.card-remove").click(function (e) {
+            let id = $(this).data('id');
 
             $.ajax({
                 url: '/kanban/delete',
                 type: 'POST',
-                data: 'id=' + objectiveId,
+                data: 'id=' + id,
                 success: function (response) {
                     location.reload();
                 },
@@ -55,8 +56,7 @@ let cards = (() => {
                         "id": id,
                         "lane": lane
                     },
-                    success: function (response) {
-                    },
+                    success: function (response) {},
                     error: function (error) {
                         alert(error);
                     }
@@ -72,11 +72,29 @@ let cards = (() => {
         });
     }
 
+    let handleCardUpdateText = () => {
+        $('.card-update-form').submit(function (event) {
+            let data = $(this).serialize() + "&id=" + $(this).data('id');
+
+            event.preventDefault();
+            $.ajax({
+                url: '/kanban/updateText',
+                type: 'POST',
+                data: data,
+                success: function (response) {},
+                error: function (error) {
+                    alert(error);
+                }
+            });
+        });
+    }
+
     return {
         init: () => {
             handleCardInsert();
             handleCardRemove();
             handleCardUpdate();
+            handleCardUpdateText();
         }
     }
 })();

@@ -7,15 +7,20 @@
         <h3 class="heading">TODO</h3>
 
         <?php foreach ($kanban as $item): ?>
-            <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
+            <form method="POST" class="card task card-update-form" data-id="<?= $item['id']; ?>" draggable="true">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $item['title']; ?></h5>
-                    <p class="card-text"><?= $item['description']; ?></p>
+                    <input type="text" name="title" id="title" class="card-title h5" value="<?= $item['title']; ?>"
+                           placeholder="title">
+                    <textarea name="description" id="description"
+                              class="card-text" placeholder="description"><?= $item['description']; ?></textarea>
                 </div>
                 <div>
-                    <span class="material-icons" data-id="<?= $item['id']; ?>" id="card-remove">delete_outline</span>
+                    <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
+                    <button type="submit" class="material-icons card-update" data-id="<?= $item['id']; ?>">
+                        <i class="material-icons">save</i>
+                    </button>
                 </div>
-            </div>
+            </form>
         <?php endforeach; ?>
     </div>
 
@@ -26,15 +31,22 @@
         <h3 class="heading">DOING</h3>
 
         <?php foreach ($kanban as $item): ?>
-            <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $item['title']; ?></h5>
-                    <p class="card-text"><?= $item['description']; ?></p>
+            <form method="POST" class="card-update-form" data-id="<?= $item['id']; ?>">
+                <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
+                    <div class="card-body">
+                        <input type="text" name="title" id="title" class="card-title h5" value="<?= $item['title']; ?>"
+                               placeholder="title">
+                        <textarea name="description" id="description"
+                                  class="card-text" placeholder="description"><?= $item['description']; ?></textarea>
+                    </div>
+                    <div>
+                        <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
+                        <button type="submit" class="material-icons card-update" data-id="<?= $item['id']; ?>">
+                            <i class="material-icons">save</i>
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <span class="material-icons" data-id="<?= $item['id']; ?>" id="card-remove">delete_outline</span>
-                </div>
-            </div>
+            </form>
         <?php endforeach; ?>
     </div>
 
@@ -45,15 +57,22 @@
         <h3 class="heading">DONE</h3>
 
         <?php foreach ($kanban as $item): ?>
-            <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $item['title']; ?></h5>
-                    <p class="card-text"><?= $item['description']; ?></p>
+            <form method="POST" class="card-update-form" data-id="<?= $item['id']; ?>">
+                <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
+                    <div class="card-body">
+                        <input type="text" name="title" id="title" class="card-title h5" value="<?= $item['title']; ?>"
+                               placeholder="title">
+                        <textarea name="description" id="description"
+                                  class="card-text" placeholder="description"><?= $item['description']; ?></textarea>
+                    </div>
+                    <div>
+                        <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
+                        <button type="submit" class="material-icons card-update" data-id="<?= $item['id']; ?>">
+                            <i class="material-icons">save</i>
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <span class="material-icons" data-id="<?= $item['id']; ?>" id="card-remove">delete_outline</span>
-                </div>
-            </div>
+            </form>
         <?php endforeach; ?>
     </div>
 </div>

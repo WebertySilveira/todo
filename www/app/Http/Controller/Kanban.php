@@ -37,4 +37,16 @@ class Kanban
             http_response_code(400);
         }
     }
+
+    public function updateText()
+    {
+        $card = new Card();
+        $card->id = $_POST["id"];
+        $card->title = $_POST['title'];
+        $card->description = $_POST['description'];
+
+        if (!(new \App\Model\Kanban())->updateText($card)) {
+            http_response_code(400);
+        }
+    }
 }

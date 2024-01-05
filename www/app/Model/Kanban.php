@@ -69,4 +69,20 @@ class Kanban
 
         return true;
     }
+
+    public function updateText(Card $card)
+    {
+        $pdo = Connect::getInstance()->prepare(
+            "UPDATE card SET title = (:title), description = (:description) where id = (:id);"
+        );
+        $pdo->bindParam(":id", $card->id);
+        $pdo->bindParam(":title", $card->title);
+        $pdo->bindParam(":description", $card->description);
+
+        if (!$pdo->execute()) {
+            return false;
+        }
+
+        return true;
+    }
 }
