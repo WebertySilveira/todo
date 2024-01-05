@@ -6,19 +6,25 @@
     <div class="col dropzone swim-lane" data-lane="<?= (Lane::TODO->value); ?>">
         <h3 class="heading">TODO</h3>
 
-        <?php foreach ($kanban as $item): ?>
-            <form method="POST" class="card task card-update-form" data-id="<?= $item['id']; ?>" draggable="true">
-                <div class="card-body">
-                    <input type="text" name="title" id="title" class="card-title h5" value="<?= $item['title']; ?>"
+        <?php
+        foreach ($kanban
+
+                 as $item):
+            $complete = $item['complete'] == 1 ? "complete" : "";
+            ?>
+            <form method="POST" class="card task card-update-form" data-id="<?= $item['id']; ?>"
+                  draggable="true">
+                <div class="card-body <?= $complete ?>">
+                    <input type="text" name="title" id="title" class="card-title h5" value="<?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8'); ?>"
                            placeholder="title">
                     <textarea name="description" id="description"
-                              class="card-text" placeholder="description"><?= $item['description']; ?></textarea>
-                </div>
-                <div>
-                    <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
-                    <button type="submit" class="material-icons card-update" data-id="<?= $item['id']; ?>">
-                        <i class="material-icons">save</i>
-                    </button>
+                              class="card-text" placeholder="description"><?= htmlspecialchars($item['description'], ENT_QUOTES, 'UTF-8'); ?></textarea>
+                    <div>
+                        <button type="submit" class="material-icons card-update" data-id="<?= $item['id']; ?>">
+                            <i class="material-icons">save</i>
+                        </button>
+                        <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
+                    </div>
                 </div>
             </form>
         <?php endforeach; ?>
@@ -30,20 +36,24 @@
 
         <h3 class="heading">DOING</h3>
 
-        <?php foreach ($kanban as $item): ?>
-            <form method="POST" class="card-update-form" data-id="<?= $item['id']; ?>">
-                <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
-                    <div class="card-body">
-                        <input type="text" name="title" id="title" class="card-title h5" value="<?= $item['title']; ?>"
-                               placeholder="title">
-                        <textarea name="description" id="description"
-                                  class="card-text" placeholder="description"><?= $item['description']; ?></textarea>
-                    </div>
+        <?php
+        foreach ($kanban
+
+                 as $item):
+            $complete = $item['complete'] == 1 ? "complete" : "";
+            ?>
+            <form method="POST" class="card task card-update-form" data-id="<?= $item['id']; ?>"
+                  draggable="true">
+                <div class="card-body <?= $complete ?>">
+                    <input type="text" name="title" id="title" class="card-title h5" value="<?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                           placeholder="title">
+                    <textarea name="description" id="description"
+                              class="card-text" placeholder="description"><?= htmlspecialchars($item['description'], ENT_QUOTES, 'UTF-8'); ?></textarea>
                     <div>
-                        <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
                         <button type="submit" class="material-icons card-update" data-id="<?= $item['id']; ?>">
                             <i class="material-icons">save</i>
                         </button>
+                        <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
                     </div>
                 </div>
             </form>
@@ -56,20 +66,24 @@
 
         <h3 class="heading">DONE</h3>
 
-        <?php foreach ($kanban as $item): ?>
-            <form method="POST" class="card-update-form" data-id="<?= $item['id']; ?>">
-                <div class="card task" draggable="true" data-id="<?= $item['id']; ?>">
-                    <div class="card-body">
-                        <input type="text" name="title" id="title" class="card-title h5" value="<?= $item['title']; ?>"
-                               placeholder="title">
-                        <textarea name="description" id="description"
-                                  class="card-text" placeholder="description"><?= $item['description']; ?></textarea>
-                    </div>
+        <?php
+        foreach ($kanban
+
+                 as $item):
+            $complete = $item['complete'] == 1 ? "complete" : "";
+            ?>
+            <form method="POST" class="card task card-update-form" data-id="<?= $item['id']; ?>"
+                  draggable="true">
+                <div class="card-body <?= $complete ?>">
+                    <input type="text" name="title" id="title" class="card-title h5" value="<?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                           placeholder="title">
+                    <textarea name="description" id="description"
+                              class="card-text" placeholder="description"><?= htmlspecialchars($item['description'], ENT_QUOTES, 'UTF-8'); ?></textarea>
                     <div>
-                        <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
                         <button type="submit" class="material-icons card-update" data-id="<?= $item['id']; ?>">
                             <i class="material-icons">save</i>
                         </button>
+                        <span class="material-icons card-remove" data-id="<?= $item['id']; ?>">delete_outline</span>
                     </div>
                 </div>
             </form>

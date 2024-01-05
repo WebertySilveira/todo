@@ -4,6 +4,7 @@
             crossorigin="anonymous"></script>
     <script src="./assets/jQuery/jquery-3.7.1.min.js" type="text/javascript"></script>
     <script src="./assets/js/kanban/cards.js" defer></script>
+    <script src="./assets/js/user.js"></script>
 </footer>
 </body>
 </html>

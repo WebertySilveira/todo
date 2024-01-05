@@ -60,6 +60,13 @@ class Kanban
         $pdo = Connect::getInstance()->prepare(
             "UPDATE card SET lane = (:lane) where id = (:id);"
         );
+
+        if ($lane == 3) {
+            $pdo = Connect::getInstance()->prepare(
+                "UPDATE card SET lane = (:lane), complete = 1 where id = (:id);"
+            );
+        }
+
         $pdo->bindParam(":id", $card->id);
         $pdo->bindParam(":lane", $lane);
 

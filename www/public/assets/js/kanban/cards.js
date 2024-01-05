@@ -56,7 +56,9 @@ let cards = (() => {
                         "id": id,
                         "lane": lane
                     },
-                    success: function (response) {},
+                    success: function (response) {
+                        location.reload();
+                    },
                     error: function (error) {
                         alert(error);
                     }

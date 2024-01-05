@@ -1,3 +1,11 @@
+Executar projeto
+
+`docker compose up -d`
+
+será montado localmente na url 
+- localhost:8100
+
+
 Ferramentas de review e correção de código (Dentro do container):
 
 - php composer.phar check

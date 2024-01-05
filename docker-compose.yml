@@ -43,6 +43,12 @@ services:
     volumes:
       - ${VHOSTS_DIR-./config/nginx/sites-enabled}:/etc/nginx/conf.d
       - ${LOG_DIR-./logs/nginx}:/var/log/nginx
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - container_default
 networks:
   container_default:
     external: true

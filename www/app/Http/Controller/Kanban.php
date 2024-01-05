@@ -10,8 +10,8 @@ class Kanban
     public function insert()
     {
         $card = new Card();
-        $card->title = $_POST['title'];
-        $card->description = $_POST['description'];
+        $card->title = strip_tags($_POST['title']);
+        $card->description = strip_tags($_POST['description']);
 
         if (!(new \App\Model\Kanban())->save($card)) {
             http_response_code(400);
@@ -42,8 +42,8 @@ class Kanban
     {
         $card = new Card();
         $card->id = $_POST["id"];
-        $card->title = $_POST['title'];
-        $card->description = $_POST['description'];
+        $card->title = strip_tags($_POST['title']);
+        $card->description = strip_tags($_POST['description']);
 
         if (!(new \App\Model\Kanban())->updateText($card)) {
             http_response_code(400);

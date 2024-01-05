@@ -57,4 +57,9 @@
       <PhpStanConfiguration tool_path="$PROJECT_DIR$/www/vendor/bin/phpstan" />
     </PhpStan_settings>
   </component>
+  <component name="PhpStepFilterConfiguration">
+    <skipped_functions>
+      <skipped_function name="App\Model\User-&gt;login" />
+    </skipped_functions>
+  </component>
 </project>
