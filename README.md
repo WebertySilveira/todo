@@ -2,6 +2,7 @@ Executar projeto
 
 - No terminal `docker compose up -d`
 - Dentro do container `php composer.phar install`
+- Script do banco está na raiz do projeto, rodar no container mysql local
 
 será montado localmente na url 
 - localhost:8100
