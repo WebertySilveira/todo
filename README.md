@@ -1,6 +1,7 @@
 Executar projeto
 
-`docker compose up -d`
+- No terminal `docker compose up -d`
+- Dentro do container `php composer.phar install`
 
 será montado localmente na url 
 - localhost:8100
